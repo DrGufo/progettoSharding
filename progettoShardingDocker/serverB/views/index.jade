@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div#content
+    if documents.length
+      table
+        tr
+          th Nome
+          th Contenuto
+          th Prezzo
+        each document in documents
+          tr
+            td= document.nome
+            td= document.contenuto
+            td= document.prezzo
+    
+    else
+      h1 Nessun documento presente
