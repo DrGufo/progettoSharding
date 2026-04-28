@@ -1,7 +1,7 @@
 # ProgettoSharding
 
 ## Descrizione
-**ProgettoSharding** e un progetto dimostrativo orientato alla distribuzione dei dati su piu nodi MongoDB, con instradamento applicativo basato su soglie di prezzo.
+**ProgettoSharding** è un progetto dimostrativo orientato alla distribuzione dei dati su più nodi MongoDB, con instradamento applicativo basato su soglie di prezzo.
 
 L'architettura combina:
 - una homepage PHP per la raccolta dati;
@@ -125,13 +125,13 @@ Aprire quindi:
 
 ## Note Operative
 - Il progetto contiene componenti distribuite tra due cartelle (`progettoShardingDockerPHP` e `progettoShardingDocker`); questa organizzazione riflette lo stato corrente del prototipo.
-- In `homepage.php` l'endpoint fetch e impostato su `http://localhost/php/ProgettoShardingDocker/backend/redirectPage.php`: in base al proprio ambiente locale potrebbe essere necessario allinearlo al percorso reale del progetto.
-- La composizione Docker avvia i tre nodi MongoDB; lo script `mongo_setup.sh` e presente ma il servizio di setup e commentato nel `compose.yaml`.
+- In `homepage.php` l'endpoint fetch è impostato su `http://localhost/php/ProgettoShardingDocker/backend/redirectPage.php`: in base al proprio ambiente locale potrebbe essere necessario allinearlo al percorso reale del progetto.
+- La composizione Docker avvia i tre nodi MongoDB; lo script `mongo_setup.sh` è presente ma il servizio di setup è commentato nel `compose.yaml`.
 
 ## Troubleshooting
 - Se `serverB` in `progettoShardingDockerPHP/serverB` non si avvia per moduli mancanti (`./routes/index`), verificare la coerenza con le risorse presenti in `progettoShardingDocker/serverB`.
 - Se `serverA` restituisce un errore di parsing in `routes/index.js`, controllare la firma della funzione `main(...)` ed eliminare eventuali caratteri residui non validi.
-- Se la homepage non invia correttamente i dati, verificare CORS, URL del backend PHP e disponibilita delle porte `3000`, `3010`, `3020`.
+- Se la homepage non invia correttamente i dati, verificare CORS, URL del backend PHP e disponibilità delle porte `3000`, `3010`, `3020`.
 
 ## Conclusioni
 Questo progetto dimostra un'architettura distribuita con MongoDB e microservizi Node.js, con un semplice meccanismo di instradamento basato su soglie di prezzo. La configurazione Docker semplifica l'avvio del cluster MongoDB, mentre i servizi Node.js gestiscono la logica applicativa e la persistenza dei dati.
